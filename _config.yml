@@ -38,6 +38,8 @@ navigation_header:
   url: /
 - title: About
   url: /about/
+- title: Supervision
+  url: /supervision/
 - title: Blog
   url: /blog/
 
