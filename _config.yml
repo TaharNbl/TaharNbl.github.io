@@ -16,6 +16,7 @@ exclude:
 - README.md
 - Gemfile
 - Gemfile.lock
+- alembic-jekyll-theme.gemspec
 
 # Set theme
 remote_theme: daviddarnes/alembic@main
