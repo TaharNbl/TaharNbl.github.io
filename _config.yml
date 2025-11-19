@@ -1,11 +1,26 @@
-# Set theme
-remote_theme: daviddarnes/alembic@main
+# Site configuration
+# 1. Files excluded from Jekyll builds
+# 2. Installed Gems
+# 3. Gem settings
+# 4. Jekyll settings
+# 5. Collections
+# 6. Jekyll collections settings
+# 7. Site settings
+# 8. Site favicons & manifest icons
+# 9. Site navigation
+
+# 1. Files excluded from Jekyll builds
 
 # File excludes
 exclude:
 - README.md
 - Gemfile
 - Gemfile.lock
+
+# Set theme
+remote_theme: daviddarnes/alembic@main
+
+# 2. Installed Gems
 
 # Set plugins
 plugins:
@@ -20,17 +35,73 @@ plugins:
 - jemoji
 - jekyll-remote-theme
 
-# Site settings
-url: 'https://TaharNbl.github.io'
-baseurl: ''
-title: 'TN'
-description: 'This is my new website'
-permalink: pretty
-logo: # "https://www.gravatar.com/avatar/6c0377abcf4da91cdd35dea4554b2a4c?s=52"
+# 3. Gem settings
 
 # Pagination
-paginate: 5
-paginate_path: blog/page:num
+paginate: 3 # jekyll-paginate > items per page
+paginate_path: blog/page:num # jekyll-paginate > blog page
+author: TaharNbl # jekyll-seo-tag > default author
+social: # jekyll-seo-tag > social overrides
+  name: Tahar Nabil # jekyll-seo-tag > real name
+  links:  # jekyll-seo-tag > social aliases (sameAs)
+    - https://www.linkedin.com/in/tahar-nabil/
+    - https://github.com/TaharNbl
+
+# 4. Jekyll settings
+sass:
+  style: compressed # Style compression
+permalink: pretty  # Permalink style (/YYYY/MM/DD/page-name/)
+excerpt_separator: <!-- more --> # Marks end of excerpt in posts
+timezone: Europe/Paris # Timezone for blog posts and alike
+
+# 5. Collections
+# collections:
+#   posts:
+#     title: Posts # Needed for Siteleaf
+#     output: true
+#     description: "My thoughts and ideas" # The post list page content
+#     feature_text: |
+#       Welcome to the blog
+#     feature_image: "https://picsum.photos/2560/600?image=866"
+
+# 6. Jekyll collections settings
+
+# # Collection settings
+# defaults:
+#   -
+#     scope:
+#       path: ""
+#       type: "posts"
+#     values:
+#       layout: post # Set the default layout for posts
+#   -
+#     scope:
+#       path: ""
+#       type: "pages"
+#     values:
+#       layout: page # Set the default layout for pages
+
+#   -
+#     scope:
+#       path: ""
+#       type: "pages"
+#     values:
+#       layout: page # Set the default layout for pages
+
+# 7. Site settings
+encoding: utf-8 # Make sure the encoding is right
+lang: en-GB # Set the site language
+title: 'TN'
+description: 'AI Researcher @ EDF R&D'
+url: 'https://taharnbl.github.io'
+baseurl: ''
+permalink: pretty
+logo: # "https://www.gravatar.com/avatar/6c0377abcf4da91cdd35dea4554b2a4c?s=52"
+css_inline: true # Will insert all styles into a single <style> block in the <head> element and remove the style <link> reference
+
+# 8. Site favicons & manifest icons
+
+# 9. Site navigation
 
 # Header nav
 navigation_header:
@@ -42,35 +113,30 @@ navigation_header:
   url: /supervision/
 - title: Open Data
   url: /open/
-# - title: Blog
-#   url: /blog/
 
 # Footer nav
 navigation_footer:
 - title: Powered by Jekyll & Alembic
   url: "#top"
 
-# Collections
-collections:
-  posts:
-    title: Posts
-    output: true
-    description: "My thoughts and ideas"
-    feature_text: |
-      Welcome to my blog
-    feature_image: "https://picsum.photos/2560/600?image=866"
+social_links: # Appears in sidebar. Set the urls then uncomment and comment out as desired
+  LinkedIn: https://www.linkedin.com/in/tahar-nabil
+  GitHub: https://github.com/TaharNbl
+  googlescholar: https://scholar.google.com/citations?user=95KPGacAAAAJ&hl=fr&oi=ao
+  # RSS: /feed.xml
 
-# Collection settings
-defaults:
-  -
-    scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: post # Set the default layout for posts
-  -
-    scope:
-      path: ""
-      type: "pages"
-    values:
-      layout: page # Set the default layout for pages
+# sharing_links: # Appear at the bottom of single blog posts, add as desired. The value can be 'true' or the desired button colour
+  # Twitter: "#0d94e7"
+  # facebook: "#3B5998"
+  # Email: true
+
+
+# Load custom fonts from fonts.google.com etc
+#
+# TIP: Try to keep the number of urls as low to reduce the performance cost
+#      If multiple fonts can be requested in a single url opt for this
+fonts:
+  preconnect_urls:
+    - https://fonts.gstatic.com
+  font_urls:
+    - https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap
